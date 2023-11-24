@@ -1,5 +1,6 @@
 const prismaClient = require("../prisma/prismaClient")
 const { compare } = require ('bcryptjs')
+const sign = require('jsonwebtoken')
 
 
 class LoginUserService{
@@ -19,7 +20,16 @@ class LoginUserService{
                 return new Error('401')
             }
         }
-        
+        const token = sign(
+            {
+                email: login.email,
+                senha: compararSenha
+            },
+            process.env.JWT_SECRET,{
+                subjetc: login.id,
+                expiresIn: '20d'
+            }
+        )
         
 
         return {
@@ -29,6 +39,7 @@ class LoginUserService{
             ultimo_login: login.ultimo_login 
             
         }
+
 
     }
 
