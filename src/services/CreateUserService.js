@@ -1,18 +1,13 @@
-
 const prismaClient = require ('../prisma/prismaClient')
 const  {hash}  = require('bcryptjs')
 
-
-
 class CreateUserService{
     async execute({nome, email, telefone, senha}){
-
         const verificarEmail = await prismaClient.user.findFirst({ // Verificar se o Email já tá cadastrado no BD
             where:{
                 email: email
             }
         })
-        
         if(verificarEmail){  //Se o email tiver cadastrado ele retorna com a informação e não faz um novo INSERT
             return "Email já cadastrado";
         }
@@ -24,8 +19,6 @@ class CreateUserService{
                     email: email,
                     telefone: telefone,
                     senha: senhaHash,
-                  
-
                 },
                 select:{
                     id:true,
@@ -36,7 +29,6 @@ class CreateUserService{
             });
             return user;
          }catch{
-            
              throw new Error("Erro ao cadastrar Usuario: "+ error.mensage);
          }  
     }
