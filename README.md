@@ -4,7 +4,7 @@ Após isso é necessario rodar o comando 'prisma migrate dev' para criar uma tab
 
 O arquivo index.js é o ponto de partida para inciar a aplicação, basta executar ele e todo o resto estara disponivel. </br> 
 o servidor escuta a porta 3000 </br>
-
+Instancia na AWS: http://54.233.139.72/
 Cadastro </br>
 Acesse a rota GET '/user' passando valores nas chaves:  nome, email, telefone, senha. Para criar um novo usuario </br>
 
