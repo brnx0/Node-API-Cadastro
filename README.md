@@ -1,4 +1,10 @@
 # Escribo2
+É necessario a utilização do POSTGRES como BD. o código para conexao fica no arquivo .ENV, Basta alterar de acordo com o banco de dados criado.</br>
+Após isso é necessario rodar o comando 'prisma migrate dev' para criar uma tabela no banco. </br> 
+
+O arquivo index.js é o ponto de partida para inciar a aplicação, basta executar ele e todo o resto estara disponivel. </br> 
+o servidor escuta a porta 3000 </br>
+
 Cadastro </br>
 Acesse a rota GET '/user' passando valores nas chaves:  nome, email, telefone, senha. Para criar um novo usuario </br>
 
