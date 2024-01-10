@@ -1,4 +1,4 @@
-# Escribo2
+# API NODE CADASTRO
 É necessario a utilização do POSTGRES como BD. o código para conexao fica no arquivo .ENV, Basta alterar de acordo com o banco de dados criado.</br>
 Após isso é necessario rodar o comando 'prisma migrate dev' para criar uma tabela no banco. </br> 
 
